@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="#212121" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Buscar vuelos">
+  <!-- Boleto trasero -->
+  <path d="M10 14 L48 8 A3 3 0 0 1 52 11 L52 14"/>
+  <!-- Boleto delantero -->
+  <rect x="6" y="16" width="50" height="34" rx="6"/>
+  <path d="M6 24 H56" stroke-dasharray="2 3"/>
+  <path d="M14 31 H30 M14 37 H26 M14 43 H22"/>
+  <!-- Avión -->
+  <g fill="#ffffff" transform="translate(44 42) rotate(45) scale(1.1) translate(-12 -12)">
+    <path d="M12 2 C12.8 2 13 3 13 4 L13 9 L21 14 L21 16 L13 13.5 L13 18 L16 20 L16 21.5 L12 20.5 L8 21.5 L8 20 L11 18 L11 13.5 L3 16 L3 14 L11 9 L11 4 C11 3 11.2 2 12 2 Z"/>
+  </g>
+</svg>
