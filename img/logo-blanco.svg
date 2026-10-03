@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 270 64" role="img" aria-labelledby="t">
+  <title id="t">ACME AIR · Flying to your dreams</title>
+  <g fill="#ffffff">
+    <!-- Avión en despegue -->
+    <path d="M3 25 L9 26 L19 40 L45 31 C55 28 64 24 62 21 C60 18 52 19 44 21 L22 28 L12 21 Z"/>
+    <path d="M33 31 L24 17 L31 14 L51 27 Z"/>
+    <path d="M30 41 L24 49 L32 47 L43 36 Z"/>
+    <!-- Nombre y lema -->
+    <text x="72" y="36" font-family="Georgia, 'Times New Roman', serif" font-size="32" letter-spacing="1">ACME AIR</text>
+    <text x="73" y="53" font-family="'Arial Narrow', Arial, sans-serif" font-size="13">Flying to your dreams</text>
+  </g>
+</svg>
