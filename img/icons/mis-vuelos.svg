@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Mis vuelos">
+  <defs>
+    <path id="p" d="M12 2 C12.8 2 13 3 13 4 L13 9 L21 14 L21 16 L13 13.5 L13 18 L16 20 L16 21.5 L12 20.5 L8 21.5 L8 20 L11 18 L11 13.5 L3 16 L3 14 L11 9 L11 4 C11 3 11.2 2 12 2 Z"/>
+  </defs>
+  <g stroke="#212121" stroke-width="2" fill="none">
+    <rect x="5" y="6" width="14" height="14" rx="3"/>
+    <rect x="5" y="25" width="14" height="14" rx="3" fill="#212121"/>
+    <rect x="5" y="44" width="14" height="14" rx="3"/>
+  </g>
+  <g transform="translate(12 13) rotate(45) scale(0.55) translate(-12 -12)" fill="#212121"><use href="#p"/></g>
+  <g transform="translate(12 32) rotate(45) scale(0.55) translate(-12 -12)" fill="#ffffff"><use href="#p"/></g>
+  <g transform="translate(12 51) rotate(45) scale(0.55) translate(-12 -12)" fill="#212121"><use href="#p"/></g>
+  <g stroke="#212121" stroke-width="3.2" stroke-linecap="round">
+    <path d="M26 9 H58 M26 17 H44"/>
+    <path d="M26 28 H58 M26 36 H44"/>
+    <path d="M26 47 H58 M26 55 H44"/>
+  </g>
+</svg>

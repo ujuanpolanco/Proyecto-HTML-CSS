@@ -1,0 +1,100 @@
+/* ==========================================================================
+   forms.css · Estilos base de formularios
+   Campos de texto, select y checkbox compartidos por todas las vistas.
+   Los ajustes propios de una vista van en la sección de su responsable.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Contenedor del formulario
+   Uso:
+   <form class="form">
+     <div class="form__field">
+       <label class="visually-hidden" for="email">Email</label>
+       <input class="form__input" id="email" type="email" placeholder="Email">
+     </div>
+   </form>
+   -------------------------------------------------------------------------- */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.form__field {
+  display: block;
+}
+
+/* --------------------------------------------------------------------------
+   Campos de texto y select
+   -------------------------------------------------------------------------- */
+.form__input,
+.form__select {
+  width: 100%;
+  height: 3.5rem;
+  padding: 0 var(--space-3);
+  font: inherit;
+  color: var(--color-text);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  transition: border-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+.form__input::placeholder {
+  color: var(--color-text-muted);
+  opacity: 1;
+}
+
+.form__input:hover,
+.form__select:hover {
+  border-color: var(--color-text-muted);
+}
+
+.form__input:focus,
+.form__select:focus {
+  border-color: var(--color-action);
+}
+
+.form__input:user-invalid,
+.form__select:user-invalid {
+  border-color: #d32f2f;
+}
+
+/* Select con flecha propia para que se vea igual en todos los navegadores */
+.form__select {
+  padding-right: 2.5rem;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23757575' d='M0 0l6 8 6-8z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right var(--space-3) center;
+  cursor: pointer;
+}
+
+/* --------------------------------------------------------------------------
+   Checkbox con su texto
+   Uso: <label class="form__check"><input class="form__checkbox" type="checkbox"> Texto</label>
+   -------------------------------------------------------------------------- */
+.form__check {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--color-text-muted);
+  cursor: pointer;
+}
+
+.form__checkbox {
+  width: 1.25rem;
+  height: 1.25rem;
+  accent-color: var(--color-action);
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   Secciones por responsable (cada quien edita solo la suya)
+   ========================================================================== */
+
+/* ===== A: acceso (login, registro, crear-contraseña, recuperar) ===== */
+
+/* ===== B: menú y búsqueda (menu, buscar-vuelos) ===== */
+
+/* ===== C: vuelos (vuelos, checkin, mis-vuelos) ===== */

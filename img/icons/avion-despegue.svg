@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 44" role="img" aria-label="Vuelo">
+  <g fill="#7283c5">
+    <path d="M4 14 L11 15 L22 29 L40 23 C46 21 52 18 50 15 C48 12 42 13 36 15 L24 19 L14 11 Z"/>
+    <path d="M27 24 L18 9 L25 7 L40 20 Z"/>
+  </g>
+  <rect x="3" y="36" width="42" height="4" rx="2" fill="#7283c5"/>
+</svg>
