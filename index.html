@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Inicio de sesión de la aplicación ACME AIR">
+
+    <title>Iniciar Sesión · ACME AIR</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+
+    <!-- Tipografía Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Hojas de estilo -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/forms.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body class="app">
+
+    <header class="app-header">
+        <img
+            class="app-header__logo"
+            src="img/logo-blanco.svg"
+            alt="ACME AIR · Flying to your dreams"
+        >
+    </header>
+
+    <main class="app__card">
+
+        <h1 class="page-title">Iniciar Sesión</h1>
+
+        <form class="form">
+
+            <!-- Campo de correo -->
+            <div class="form__field">
+                <label class="visually-hidden" for="email">
+                    Correo electrónico
+                </label>
+
+                <input
+                    class="form__input"
+                    id="email"
+                    name="email"
+                    type="email"
+                    placeholder="Email"
+                    autocomplete="email"
+                    required
+                >
+            </div>
+
+            <!-- Campo de contraseña -->
+            <div class="form__field">
+                <label class="visually-hidden" for="password">
+                    Contraseña
+                </label>
+
+                <input
+                    class="form__input"
+                    id="password"
+                    name="password"
+                    type="password"
+                    placeholder="Contraseña"
+                    autocomplete="current-password"
+                    required
+                >
+            </div>
+
+            <!-- Recordar datos -->
+            <label class="form__check">
+                <input
+                    class="form__checkbox"
+                    type="checkbox"
+                    name="recordar"
+                >
+
+                <span>Recordar mis datos</span>
+            </label>
+
+            <!-- Ingresar -->
+            <a
+                class="btn btn--primary"
+                href="menu.html"
+            >
+                INGRESAR
+            </a>
+
+            <!-- Crear cuenta -->
+            <a
+                class="link"
+                href="registro.html"
+            >
+                Crear cuenta
+            </a>
+
+            <!-- Recuperar contraseña -->
+            <a
+                class="link"
+                href="recuperar.html"
+            >
+                ¿Has olvidado tu contraseña?
+            </a>
+
+        </form>
+
+    </main>
+
+</body>
+
+</html>
