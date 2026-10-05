@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Busca vuelos de ACME AIR indicando origen, destino y fechas de viaje.">
+  <title>Búsqueda de vuelos · ACME AIR</title>
+
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+
+  <!-- Tipografía: Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Hojas de estilo: responsive siempre al final -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/forms.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body class="app">
+  <header class="app-header">
+    <img class="app-header__logo" src="img/logo-blanco.svg" alt="ACME AIR · Flying to your dreams">
+  </header>
+
+  <main class="app__card">
+    <div class="user-bar">
+      <img class="user-bar__avatar" src="img/icons/avatar.svg" alt="">
+      <div>
+        <p class="user-bar__name">John Doe</p>
+        <a class="link link--muted" href="index.html">Cerrar Sesión</a>
+      </div>
+    </div>
+
+    <h1 class="page-title">Búsqueda de Vuelos</h1>
+
+    <!-- Navegación simulada: el formulario lleva a la vista de vuelos disponibles -->
+    <form class="form form--busqueda" action="vuelos.html" method="get">
+      <label class="form__check">
+        <input class="form__checkbox" type="checkbox" name="solo-ida">
+        <span>Solo ida</span>
+      </label>
+
+      <div class="form__field">
+        <label class="visually-hidden" for="origen">Origen</label>
+        <input class="form__input" id="origen" name="origen" type="text" list="ciudades"
+               placeholder="Origen" autocomplete="off">
+      </div>
+
+      <div class="form__field">
+        <label class="visually-hidden" for="destino">Destino</label>
+        <input class="form__input" id="destino" name="destino" type="text" list="ciudades"
+               placeholder="Destino" autocomplete="off">
+      </div>
+
+      <div class="form__field form__field--fecha form__field--salida">
+        <label class="form__label" for="salida">Fecha de salida</label>
+        <input class="form__input" id="salida" name="salida" type="date">
+      </div>
+
+      <div class="form__field form__field--fecha form__field--regreso">
+        <label class="form__label" for="regreso">Fecha de regreso</label>
+        <input class="form__input" id="regreso" name="regreso" type="date">
+      </div>
+
+      <button class="btn btn--primary" type="submit">Buscar</button>
+
+      <!-- Ciudades sugeridas para origen y destino (también se puede escribir otra) -->
+      <datalist id="ciudades">
+        <option value="Bogotá"></option>
+        <option value="Medellín"></option>
+        <option value="Cali"></option>
+        <option value="Barranquilla"></option>
+        <option value="Cartagena"></option>
+        <option value="Bucaramanga"></option>
+        <option value="Santa Marta"></option>
+        <option value="Pereira"></option>
+      </datalist>
+    </form>
+  </main>
+</body>
+</html>
