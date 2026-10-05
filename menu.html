@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Menú principal de ACME AIR: busca vuelos, haz tu check-in y consulta tus viajes.">
+  <title>Menú principal · ACME AIR</title>
+
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+
+  <!-- Tipografía: Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Hojas de estilo: responsive siempre al final -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/forms.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body class="app app--menu">
+  <header class="app-header">
+    <img class="app-header__logo" src="img/logo-blanco.svg" alt="ACME AIR · Flying to your dreams">
+  </header>
+
+  <div class="app__card menu">
+    <!-- Perfil: saludo y cierre de sesión. En escritorio es la barra lateral -->
+    <aside class="menu__perfil">
+      <img class="menu__avatar" src="img/icons/avatar.svg" alt="">
+      <h1 class="menu__saludo">¡Hola John Doe!</h1>
+      <p class="menu__pregunta">¿Qué quieres hacer?</p>
+
+      <!-- Accesos rápidos: solo se muestran en escritorio -->
+      <nav class="menu__nav" aria-label="Accesos rápidos">
+        <ul class="menu__nav-lista">
+          <li>
+            <a class="menu__nav-enlace" href="buscar-vuelos.html">
+              <img class="menu__nav-icono" src="img/icons/buscar-vuelos.svg" alt="">
+              Buscar vuelos
+            </a>
+          </li>
+          <li>
+            <a class="menu__nav-enlace" href="checkin.html">
+              <img class="menu__nav-icono" src="img/icons/checkin.svg" alt="">
+              Check In
+            </a>
+          </li>
+          <li>
+            <a class="menu__nav-enlace" href="mis-vuelos.html">
+              <img class="menu__nav-icono" src="img/icons/mis-vuelos.svg" alt="">
+              Mis Vuelos
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <a class="link link--muted menu__salir" href="index.html">Cerrar Sesión</a>
+    </aside>
+
+    <main class="menu__principal">
+      <h2 class="visually-hidden">Opciones disponibles</h2>
+
+      <ul class="menu__opciones">
+        <li>
+          <a class="card menu__opcion" href="buscar-vuelos.html">
+            <img class="menu__icono" src="img/icons/buscar-vuelos.svg" alt="">
+            <span class="menu__texto">
+              <span class="menu__titulo">Buscar vuelos</span>
+              <span class="menu__descripcion">Encuentra y reserva tu próxima aventura.</span>
+            </span>
+            <img class="menu__chevron" src="img/icons/chevron-right.svg" alt="">
+          </a>
+        </li>
+        <li>
+          <a class="card menu__opcion" href="checkin.html">
+            <img class="menu__icono" src="img/icons/checkin.svg" alt="">
+            <span class="menu__texto">
+              <span class="menu__titulo">Check In</span>
+              <span class="menu__descripcion">Obtén tu pase de abordar de forma rápida y sencilla.</span>
+            </span>
+            <img class="menu__chevron" src="img/icons/chevron-right.svg" alt="">
+          </a>
+        </li>
+        <li>
+          <a class="card menu__opcion" href="mis-vuelos.html">
+            <img class="menu__icono" src="img/icons/mis-vuelos.svg" alt="">
+            <span class="menu__texto">
+              <span class="menu__titulo">Mis Vuelos</span>
+              <span class="menu__descripcion">Gestiona tus próximos viajes y consulta los detalles.</span>
+            </span>
+            <img class="menu__chevron" src="img/icons/chevron-right.svg" alt="">
+          </a>
+        </li>
+      </ul>
+    </main>
+  </div>
+</body>
+</html>
