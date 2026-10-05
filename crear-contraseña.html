@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Creación de contraseña para usuarios de ACME AIR"
+    >
+
+    <title>Crear contraseña · ACME AIR</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+
+    <!-- Tipografía Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Hojas de estilo -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/forms.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body class="app">
+
+    <header class="app-header">
+        <img
+            class="app-header__logo"
+            src="img/logo-blanco.svg"
+            alt="ACME AIR · Flying to your dreams"
+        >
+    </header>
+
+    <main class="app__card">
+
+        <h1 class="page-title">Crear contraseña</h1>
+
+        <form class="form">
+
+            <!-- Contraseña -->
+            <div class="form__field">
+                <label class="visually-hidden" for="password">
+                    Contraseña
+                </label>
+
+                <input
+                    class="form__input"
+                    id="password"
+                    name="password"
+                    type="password"
+                    placeholder="Contraseña"
+                    autocomplete="new-password"
+                    required
+                >
+            </div>
+
+            <!-- Repetir contraseña -->
+            <div class="form__field">
+                <label class="visually-hidden" for="confirm-password">
+                    Repetir contraseña
+                </label>
+
+                <input
+                    class="form__input"
+                    id="confirm-password"
+                    name="confirm-password"
+                    type="password"
+                    placeholder="Repetir contraseña"
+                    autocomplete="new-password"
+                    required
+                >
+            </div>
+
+            <!-- Botón guardar -->
+            <a
+                class="btn btn--primary"
+                href="menu.html"
+            >
+                GUARDAR
+            </a>
+
+        </form>
+
+    </main>
+
+</body>
+
+</html>
