@@ -102,4 +102,68 @@
 
 /* ===== B: menú y búsqueda (menu, buscar-vuelos) ===== */
 
+/* --------------------------------------------------------------------------
+   Menú principal (menu.html) · vista móvil
+   El avatar, los accesos rápidos y la descripción de cada opción solo
+   se muestran en escritorio (ver responsive.css).
+   -------------------------------------------------------------------------- */
+.menu__perfil {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: var(--space-4);
+  text-align: center;
+}
+
+.menu__avatar,
+.menu__nav,
+.menu__descripcion {
+  display: none;
+}
+
+.menu__saludo {
+  font-size: var(--font-size-xl);
+}
+
+.menu__pregunta {
+  margin-bottom: var(--space-2);
+  font-size: var(--font-size-lg);
+}
+
+.menu__opciones {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+/* Cada opción es una .card completa y clicable */
+.menu__opcion {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  color: var(--color-text-muted);
+  text-decoration: none;
+}
+
+.menu__icono {
+  flex-shrink: 0;
+  width: 3.5rem;
+  height: 3.5rem;
+}
+
+.menu__texto {
+  flex: 1;
+}
+
+.menu__titulo {
+  display: block;
+  font-size: var(--font-size-lg);
+}
+
+.menu__chevron {
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
 /* ===== C: vuelos (vuelos, checkin, mis-vuelos) ===== */
