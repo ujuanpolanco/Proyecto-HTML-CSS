@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Consulta tus reservas con ACME AIR y el estado de cada vuelo.">
+    <title>Mis vuelos · ACME AIR</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+
+    <!-- Tipografía Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Hojas de estilo: respetar este orden (responsive siempre al final) -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/forms.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body class="app">
+
+    <header class="app-header">
+        <img class="app-header__logo" src="img/logo-blanco.svg" alt="ACME AIR · Flying to your dreams">
+    </header>
+
+    <main class="app__card">
+
+        <!-- Barra de usuario -->
+        <div class="user-bar">
+            <img class="user-bar__avatar" src="img/icons/avatar.svg" alt="">
+            <div>
+                <p class="user-bar__name">John Doe</p>
+                <a class="link link--muted" href="index.html">Cerrar Sesión</a>
+            </div>
+        </div>
+
+        <h1 class="page-title">Mis Vuelos</h1>
+
+        <ul class="flight-list">
+            <li>
+                <article class="card flight-card">
+                    <img class="flight-card__icon" src="img/icons/avion-despegue.svg" alt="">
+                    <div class="flight-card__body">
+                        <h2 class="flight-card__number"><span class="visually-hidden">Vuelo </span>VAA025</h2>
+                        <p class="flight-card__schedule"><time datetime="05:30">05:30</time> - <time datetime="06:30">06:30</time></p>
+                        <p class="flight-card__duration">1h 30 min</p>
+                        <p class="flight-card__status">A tiempo</p>
+                        <p class="flight-card__date"><time datetime="09-29">Sep 29</time></p>
+                        <p class="flight-card__route">Bogotá - Barranquilla</p>
+                    </div>
+                </article>
+            </li>
+            <li>
+                <article class="card flight-card">
+                    <img class="flight-card__icon" src="img/icons/avion-despegue.svg" alt="">
+                    <div class="flight-card__body">
+                        <h2 class="flight-card__number"><span class="visually-hidden">Vuelo </span>VAA185</h2>
+                        <p class="flight-card__schedule"><time datetime="10:30">10:30</time> - <time datetime="12:00">12:00</time></p>
+                        <p class="flight-card__duration">1h 30 min</p>
+                        <p class="flight-card__status">Aterrizó</p>
+                        <p class="flight-card__date"><time datetime="07-05">Jul 05</time></p>
+                        <p class="flight-card__route">Bogotá - Barranquilla</p>
+                    </div>
+                </article>
+            </li>
+            <li>
+                <article class="card flight-card">
+                    <img class="flight-card__icon" src="img/icons/avion-despegue.svg" alt="">
+                    <div class="flight-card__body">
+                        <h2 class="flight-card__number"><span class="visually-hidden">Vuelo </span>VAA800</h2>
+                        <p class="flight-card__schedule"><time datetime="05:30">05:30</time> - <time datetime="06:30">06:30</time></p>
+                        <p class="flight-card__duration">1h 30 min</p>
+                        <p class="flight-card__status">Aterrizó</p>
+                        <p class="flight-card__date"><time datetime="02-04">Feb 04</time></p>
+                        <p class="flight-card__route">Bogotá - Barranquilla</p>
+                    </div>
+                </article>
+            </li>
+        </ul>
+
+        <a class="btn btn--primary" href="menu.html">Volver</a>
+
+    </main>
+
+</body>
+
+</html>
