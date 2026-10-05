@@ -166,4 +166,31 @@
   height: 1.5rem;
 }
 
+/* Interacción: las tarjetas crecen un poco al pasar el cursor */
+.menu__opcion,
+.menu__nav-enlace {
+  transition: transform var(--transition-base), box-shadow var(--transition-base),
+    background-color var(--transition-base);
+}
+
+.menu__opcion:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.menu__opcion:active {
+  transform: scale(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .menu__opcion,
+  .menu__nav-enlace {
+    transition: none;
+  }
+
+  .menu__opcion:hover {
+    transform: none;
+  }
+}
+
 /* ===== C: vuelos (vuelos, checkin, mis-vuelos) ===== */
