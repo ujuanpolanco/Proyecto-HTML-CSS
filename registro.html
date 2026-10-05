@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Registro de nuevos usuarios de ACME AIR"
+    >
+
+    <title>Crear cuenta · ACME AIR</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+
+    <!-- Tipografía Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Hojas de estilo -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/forms.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body class="app">
+
+    <header class="app-header">
+        <img
+            class="app-header__logo"
+            src="img/logo-blanco.svg"
+            alt="ACME AIR · Flying to your dreams"
+        >
+    </header>
+
+    <main class="app__card">
+
+        <h1 class="page-title">Crear cuenta</h1>
+
+        <form class="form">
+
+            <!-- Nombre completo -->
+            <div class="form__field">
+                <label class="visually-hidden" for="nombre">
+                    Nombre completo
+                </label>
+
+                <input
+                    class="form__input"
+                    id="nombre"
+                    name="nombre"
+                    type="text"
+                    placeholder="Nombre completo"
+                    autocomplete="name"
+                    required
+                >
+            </div>
+
+            <!-- Identificación -->
+            <div class="form__field">
+                <label class="visually-hidden" for="identificacion">
+                    Identificación
+                </label>
+
+                <input
+                    class="form__input"
+                    id="identificacion"
+                    name="identificacion"
+                    type="text"
+                    placeholder="Identificación"
+                    required
+                >
+            </div>
+
+            <!-- Correo electrónico -->
+            <div class="form__field">
+                <label class="visually-hidden" for="email">
+                    E-mail
+                </label>
+
+                <input
+                    class="form__input"
+                    id="email"
+                    name="email"
+                    type="email"
+                    placeholder="E-mail"
+                    autocomplete="email"
+                    required
+                >
+            </div>
+
+            <!-- Teléfono -->
+            <div class="form__field">
+                <label class="visually-hidden" for="telefono">
+                    Teléfono
+                </label>
+
+                <input
+                    class="form__input"
+                    id="telefono"
+                    name="telefono"
+                    type="tel"
+                    placeholder="Teléfono"
+                    autocomplete="tel"
+                    required
+                >
+            </div>
+
+            <!-- Ciudad -->
+            <div class="form__field">
+                <label class="visually-hidden" for="ciudad">
+                    Ciudad
+                </label>
+
+                <input
+                    class="form__input"
+                    id="ciudad"
+                    name="ciudad"
+                    type="text"
+                    placeholder="Ciudad"
+                    autocomplete="address-level2"
+                    required
+                >
+            </div>
+
+            <!-- Guardar -->
+            <a
+                class="btn btn--primary"
+                href="crear-contraseña.html"
+            >
+                GUARDAR
+            </a>
+
+        </form>
+
+    </main>
+
+</body>
+
+</html>
