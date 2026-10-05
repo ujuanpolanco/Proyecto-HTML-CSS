@@ -1,0 +1,250 @@
+/* ==========================================================================
+   responsive.css · Adaptación a tablet y escritorio
+   Estrategia mobile first: la base (320 px en adelante) está en style.css,
+   forms.css y layout.css; aquí solo se agregan los cambios por ancho.
+
+   Breakpoints del proyecto:
+   - 320 px  · móvil pequeño (estilos base, sin media query)
+   - 768 px  · tablet
+   - 1024 px · escritorio (vista centrada con padding lateral)
+
+   Este archivo se enlaza al final de cada HTML porque las media queries
+   son excepciones que deben sobrescribir lo anterior.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Base compartida
+   -------------------------------------------------------------------------- */
+@media (min-width: 768px) {
+  .app-header__logo {
+    height: 4rem;
+  }
+
+  /* La hoja blanca se centra y deja ver el degradado a los lados */
+  .app__card {
+    width: 100%;
+    max-width: 40rem;
+    margin: 0 auto;
+    padding: var(--space-5);
+  }
+}
+
+@media (min-width: 1024px) {
+  .app {
+    padding: 0 var(--space-5);
+  }
+
+  .app__card {
+    max-width: 45rem;
+  }
+}
+
+/* ==========================================================================
+   Secciones por responsable (cada quien edita solo la suya, con sus propios
+   @media dentro de ella)
+   ========================================================================== */
+
+/* ===== A: acceso (login, registro, crear-contraseña, recuperar) ===== */
+
+/* ===== B: menú y búsqueda (menu, buscar-vuelos) ===== */
+
+/* --------------------------------------------------------------------------
+   Menú principal · escritorio (1024 px)
+   La página pasa a una cuadrícula por áreas: logo y perfil a la izquierda
+   (barra lateral) y las tarjetas de opciones a la derecha.
+   .menu usa display: contents para que sus hijos entren en la cuadrícula.
+   -------------------------------------------------------------------------- */
+@media (min-width: 1024px) {
+  .app--menu {
+    --menu-fondo: #f4f5f9;
+
+    display: grid;
+    grid-template-columns: 15rem 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+      "cabecera principal"
+      "perfil   principal";
+    padding: 0;
+    background: var(--menu-fondo);
+  }
+
+  .app--menu .menu {
+    display: contents;
+  }
+
+  .app--menu .app-header {
+    grid-area: cabecera;
+    padding: var(--space-3);
+    background: linear-gradient(to right, var(--color-brand-start), var(--color-brand-end));
+  }
+
+  .app--menu .app-header__logo {
+    width: 100%;
+    max-width: 12rem;
+    height: auto;
+  }
+
+  /* Barra lateral: perfil, accesos rápidos y cierre de sesión al final */
+  .app--menu .menu__perfil {
+    grid-area: perfil;
+    margin: 0;
+    padding: var(--space-4) var(--space-3);
+    background-color: var(--color-surface);
+    border-right: 1px solid var(--color-divider);
+  }
+
+  .menu__avatar {
+    display: block;
+    width: 4.5rem;
+    height: 4.5rem;
+    margin-bottom: var(--space-2);
+  }
+
+  .menu__saludo {
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-medium);
+  }
+
+  .menu__pregunta {
+    margin-bottom: var(--space-4);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+  }
+
+  .menu__nav {
+    display: block;
+    align-self: stretch;
+  }
+
+  .menu__nav-lista {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+  }
+
+  .menu__nav-enlace {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-3);
+    font-size: var(--font-size-sm);
+    color: var(--color-text);
+    text-decoration: none;
+    border-radius: var(--radius-md);
+  }
+
+  .menu__nav-enlace:hover {
+    background-color: var(--menu-fondo);
+  }
+
+  .menu__nav-icono {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .menu__salir {
+    margin-top: auto;
+    font-size: var(--font-size-sm);
+  }
+
+  /* Tarjetas: dos columnas y la tercera ocupa todo el ancho */
+  .app--menu .menu__principal {
+    grid-area: principal;
+    padding: var(--space-5);
+  }
+
+  .menu__opciones {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-4);
+    max-width: 60rem;
+  }
+
+  .menu__opciones li:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .menu__opcion {
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
+    padding: var(--space-4);
+    text-align: center;
+  }
+
+  .menu__icono {
+    width: 3.5rem;
+    height: 3.5rem;
+    padding: 0.75rem;
+    background-color: var(--menu-fondo);
+    border-radius: 50%;
+  }
+
+  .menu__texto {
+    flex: 0 1 auto;
+  }
+
+  .menu__titulo {
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text);
+  }
+
+  .menu__descripcion {
+    display: block;
+    font-size: var(--font-size-sm);
+  }
+
+  .menu__chevron {
+    display: none;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Búsqueda de vuelos · tablet y escritorio (768 px en adelante)
+   Origen y destino van lado a lado, igual que las fechas; el checkbox y el
+   botón ocupan todo el ancho.
+   -------------------------------------------------------------------------- */
+@media (min-width: 768px) {
+  .form--busqueda {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-3) var(--space-4);
+  }
+
+  .form--busqueda .form__check,
+  .form--busqueda .btn {
+    grid-column: 1 / -1;
+  }
+
+  /* Solo ida: sin fecha de regreso, la de salida ocupa todo el ancho */
+  .form--busqueda:has([name="solo-ida"]:checked) .form__field--salida {
+    grid-column: 1 / -1;
+  }
+}
+
+/* ===== C: vuelos (vuelos, checkin, mis-vuelos) ===== */
+@media (min-width: 768px) {
+  .flight-card {
+    padding: var(--space-3) var(--space-4);
+    column-gap: var(--space-4);
+  }
+
+  .flight-card__icon {
+    width: 3.25rem;
+  }
+
+  .flight-card__schedule {
+    font-size: var(--font-size-base);
+  }
+
+  .flight-card__price,
+  .flight-card__status,
+  .flight-card--checkin .flight-card__number {
+    font-size: calc(var(--font-size-xl) * 1.15);
+  }
+
+  .checkin__contacto {
+    padding: var(--space-5);
+  }
+}

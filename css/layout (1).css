@@ -1,0 +1,364 @@
+/* ==========================================================================
+   layout.css · Estructura de página y componentes de maquetación
+   Mobile first: aquí se define la vista móvil (320 px en adelante).
+   Los cambios para tablet y escritorio van en responsive.css.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Página
+   Estructura:
+   <body class="app">
+     <header class="app-header"> <img class="app-header__logo" ...> </header>
+     <main class="app__card"> ... </main>
+   </body>
+   -------------------------------------------------------------------------- */
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: var(--gradient-brand);
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-3) var(--space-3) var(--space-4);
+}
+
+.app-header__logo {
+  width: auto;
+  height: 3.25rem;
+}
+
+/* Hoja blanca con las esquinas superiores redondeadas que sube sobre el degradado */
+.app__card {
+  flex: 1;
+  padding: var(--space-4) var(--space-3);
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+/* --------------------------------------------------------------------------
+   Barra de usuario (avatar, nombre y "Cerrar Sesión")
+   Se usa en buscar-vuelos, vuelos, checkin y mis-vuelos.
+   Uso:
+   <div class="user-bar">
+     <img class="user-bar__avatar" src="img/icons/avatar.svg" alt="">
+     <div>
+       <p class="user-bar__name">John Doe</p>
+       <a class="link link--muted" href="index.html">Cerrar Sesión</a>
+     </div>
+   </div>
+   -------------------------------------------------------------------------- */
+.user-bar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding-bottom: var(--space-3);
+  margin-bottom: var(--space-4);
+  border-bottom: 1px solid var(--color-divider);
+}
+
+.user-bar__avatar {
+  flex-shrink: 0;
+  width: 3.25rem;
+  height: 3.25rem;
+  border-radius: 50%;
+}
+
+.user-bar__name {
+  font-size: var(--font-size-xl);
+  line-height: 1.2;
+}
+
+/* --------------------------------------------------------------------------
+   Título de vista
+   -------------------------------------------------------------------------- */
+.page-title {
+  margin-bottom: var(--space-4);
+  font-size: var(--font-size-xl);
+  text-align: center;
+}
+
+/* --------------------------------------------------------------------------
+   Tarjeta genérica reutilizable
+   Base de las tarjetas del menú, de vuelos y del check-in.
+   Uso: <article class="card"> ... </article>
+   -------------------------------------------------------------------------- */
+.card {
+  padding: var(--space-3);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+}
+
+/* ==========================================================================
+   Secciones por responsable (cada quien edita solo la suya)
+   ========================================================================== */
+
+/* ===== A: acceso (login, registro, crear-contraseña, recuperar) ===== */
+
+/* ===== B: menú y búsqueda (menu, buscar-vuelos) ===== */
+
+/* --------------------------------------------------------------------------
+   Menú principal (menu.html) · vista móvil
+   El avatar, los accesos rápidos y la descripción de cada opción solo
+   se muestran en escritorio (ver responsive.css).
+   -------------------------------------------------------------------------- */
+.menu__perfil {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: var(--space-4);
+  text-align: center;
+}
+
+.menu__avatar,
+.menu__nav,
+.menu__descripcion {
+  display: none;
+}
+
+.menu__saludo {
+  font-size: var(--font-size-xl);
+}
+
+.menu__pregunta {
+  margin-bottom: var(--space-2);
+  font-size: var(--font-size-lg);
+}
+
+.menu__opciones {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+/* Cada opción es una .card completa y clicable */
+.menu__opcion {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  color: var(--color-text-muted);
+  text-decoration: none;
+}
+
+.menu__icono {
+  flex-shrink: 0;
+  width: 3.5rem;
+  height: 3.5rem;
+}
+
+.menu__texto {
+  flex: 1;
+}
+
+.menu__titulo {
+  display: block;
+  font-size: var(--font-size-lg);
+}
+
+.menu__chevron {
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+/* Interacción: las tarjetas crecen un poco al pasar el cursor */
+.menu__opcion,
+.menu__nav-enlace {
+  transition: transform var(--transition-base), box-shadow var(--transition-base),
+    background-color var(--transition-base);
+}
+
+.menu__opcion:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.menu__opcion:active {
+  transform: scale(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .menu__opcion,
+  .menu__nav-enlace {
+    transition: none;
+  }
+
+  .menu__opcion:hover {
+    transform: none;
+  }
+}
+
+/* ===== C: vuelos (vuelos, checkin, mis-vuelos) ===== */
+
+/* --------------------------------------------------------------------------
+   Datos de la búsqueda bajo el título (ruta y fecha), alineados a la izquierda
+   Uso: <div class="vuelos__busqueda"> <p>Bogotá - Barranquilla</p> <p>Septiembre - 29</p> </div>
+   -------------------------------------------------------------------------- */
+.vuelos__busqueda {
+  margin-bottom: var(--space-4);
+  font-size: var(--font-size-lg);
+  line-height: 1.4;
+}
+
+/* --------------------------------------------------------------------------
+   Lista de tarjetas de vuelo (vuelos y mis-vuelos)
+   Uso: <ul class="flight-list"> <li> <article class="card flight-card"> ...
+   -------------------------------------------------------------------------- */
+.flight-list {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+/* --------------------------------------------------------------------------
+   Tarjeta de vuelo. Se apoya en .card (borde, radio y sombra).
+   Ícono grande a la izquierda y dos filas de datos a la derecha:
+     horario      número de vuelo
+     duración     precio (o estado)
+     fecha        ruta              (solo mis-vuelos)
+   En checkin se agrega el modificador .flight-card--checkin (ver abajo).
+   Estructura:
+   <article class="card flight-card">
+     <img class="flight-card__icon" src="img/icons/avion-despegue.svg" alt="">
+     <div class="flight-card__body">
+       <h2 class="flight-card__number"><span class="visually-hidden">Vuelo </span>VAA025</h2>
+       <p class="flight-card__schedule"><time datetime="05:30">05:30</time> - <time datetime="06:30">06:30</time></p>
+       <p class="flight-card__duration">1h 30 min</p>
+       <p class="flight-card__price"><span class="flight-card__currency">COP</span>150.600</p>
+       (en mis-vuelos, en lugar del precio:)
+       <p class="flight-card__status">A tiempo</p>
+       <p class="flight-card__date"><time datetime="09-29">Sep 29</time></p>
+       <p class="flight-card__route">Bogotá - Barranquilla</p>
+     </div>
+   </article>
+   -------------------------------------------------------------------------- */
+.flight-card {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  column-gap: var(--space-2);
+  row-gap: var(--space-3);
+}
+
+.flight-card__icon {
+  width: 2.25rem;
+  height: auto;
+}
+
+.flight-card__body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: baseline;
+  column-gap: var(--space-2);
+  row-gap: var(--space-1);
+  color: var(--color-text-muted);
+}
+
+/* El número va primero en el HTML (es el título de la tarjeta para lectores
+   de pantalla) pero se muestra arriba a la derecha, como en el mockup. */
+.flight-card__schedule {
+  grid-column: 1;
+  grid-row: 1;
+  font-size: var(--font-size-sm);
+  white-space: nowrap;
+}
+
+.flight-card__number {
+  grid-column: 2;
+  grid-row: 1;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-regular);
+  text-align: right;
+}
+
+.flight-card__duration {
+  grid-column: 1;
+  grid-row: 2;
+  font-size: var(--font-size-sm);
+  white-space: nowrap;
+}
+
+.flight-card__price,
+.flight-card__status {
+  grid-column: 2;
+  grid-row: 2;
+  justify-self: end;
+  white-space: nowrap;
+}
+
+.flight-card__price {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.1;
+}
+
+.flight-card__currency {
+  margin-right: var(--space-1);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-regular);
+}
+
+/* Estado del vuelo (mis-vuelos): mismo lugar y tamaño que el precio */
+.flight-card__status {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+/* Tercera fila (mis-vuelos): fecha a la izquierda y ruta a la derecha */
+.flight-card__date,
+.flight-card__route {
+  grid-row: 3;
+  font-size: var(--font-size-sm);
+}
+
+.flight-card__date {
+  grid-column: 1;
+  white-space: nowrap;
+}
+
+.flight-card__route {
+  grid-column: 2;
+  text-align: right;
+}
+
+/* Variante del check-in: el número de vuelo grande a la derecha, ocupando
+   las tres filas, y la ruta en la tercera fila a la izquierda. */
+.flight-card--checkin .flight-card__number {
+  grid-row: 1 / 4;
+  align-self: center;
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-medium);
+}
+
+.flight-card--checkin .flight-card__route {
+  grid-column: 1;
+  font-weight: var(--font-weight-medium);
+  text-align: left;
+}
+
+/* --------------------------------------------------------------------------
+   Check-in: tarjeta del vuelo y tarjeta del contacto de emergencia
+   -------------------------------------------------------------------------- */
+.checkin__vuelo {
+  margin-bottom: var(--space-4);
+}
+
+.checkin__contacto {
+  padding: var(--space-4) var(--space-3);
+}
+
+.checkin__subtitulo {
+  margin-bottom: var(--space-4);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-muted);
+  text-transform: capitalize;
+}
