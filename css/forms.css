@@ -97,4 +97,28 @@
 
 /* ===== B: menú y búsqueda (menu, buscar-vuelos) ===== */
 
+/* --------------------------------------------------------------------------
+   Búsqueda de vuelos (buscar-vuelos.html)
+   Un <input type="date"> no muestra placeholder, así que su etiqueta se
+   dibuja dentro del borde del campo, sobre el valor.
+   -------------------------------------------------------------------------- */
+.form__field--fecha {
+  position: relative;
+}
+
+.form__field--fecha .form__label {
+  position: absolute;
+  top: 0.4rem;
+  left: var(--space-3);
+  font-size: 0.75rem;
+  line-height: 1;
+  color: var(--color-text-muted);
+  pointer-events: none;
+}
+
+.form__field--fecha .form__input {
+  padding-top: 1.1rem;
+  cursor: pointer;
+}
+
 /* ===== C: vuelos (vuelos, checkin, mis-vuelos) ===== */
