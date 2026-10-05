@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Recuperación de contraseña de ACME AIR"
+    >
+
+    <title>Recuperar contraseña · ACME AIR</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+
+    <!-- Tipografía Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Hojas de estilo -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/forms.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body class="app">
+
+    <header class="app-header">
+        <img
+            class="app-header__logo"
+            src="img/logo-blanco.svg"
+            alt="ACME AIR · Flying to your dreams"
+        >
+    </header>
+
+    <main class="app__card">
+
+        <h1 class="page-title">Recuperar contraseña</h1>
+
+        <form class="form">
+
+            <!-- Correo electrónico -->
+            <div class="form__field">
+                <label class="visually-hidden" for="email">
+                    Correo electrónico
+                </label>
+
+                <input
+                    class="form__input"
+                    id="email"
+                    name="email"
+                    type="email"
+                    placeholder="Correo electrónico"
+                    autocomplete="email"
+                    required
+                >
+            </div>
+
+            <!-- Botón enviar -->
+            <a
+                class="btn btn--primary"
+                href="crear-contraseña.html"
+            >
+                ENVIAR
+            </a>
+
+        </form>
+
+    </main>
+
+</body>
+
+</html>
