@@ -121,4 +121,10 @@
   cursor: pointer;
 }
 
+/* Solo ida: sin JavaScript, el formulario oculta la fecha de regreso cuando
+   el checkbox está marcado (mejora progresiva: sin :has() el campo sigue visible) */
+.form:has([name="solo-ida"]:checked) .form__field--regreso {
+  display: none;
+}
+
 /* ===== C: vuelos (vuelos, checkin, mis-vuelos) ===== */
