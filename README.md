@@ -91,7 +91,7 @@ Las 9 vistas del enunciado están integradas en `main` y la navegación simulada
 
 ### Tablet y escritorio
 
-**Menú principal (escritorio, 1280 px):** el mismo diseño del celular, centrado sobre el degradado y con la descripción de cada opción.
+**Menú principal (escritorio, 1280 px):** barra lateral con el perfil y las tarjetas de opciones en una cuadrícula centrada; en tablet se mantiene la barra lateral y en celular el perfil pasa arriba.
 
 ![Menú principal en escritorio](docs/capturas/menu-escritorio.png)
 
