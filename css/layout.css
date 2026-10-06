@@ -185,8 +185,7 @@
 
 /* --------------------------------------------------------------------------
    Menú principal (menu.html) · vista móvil
-   El avatar, los accesos rápidos y la descripción de cada opción solo
-   se muestran en escritorio (ver responsive.css).
+   La descripción de cada opción se muestra desde tablet (ver responsive.css).
    -------------------------------------------------------------------------- */
 .menu__perfil {
   display: flex;
@@ -196,8 +195,6 @@
   text-align: center;
 }
 
-.menu__avatar,
-.menu__nav,
 .menu__descripcion {
   display: none;
 }
@@ -248,8 +245,7 @@
 }
 
 /* Interacción: las tarjetas crecen un poco al pasar el cursor */
-.menu__opcion,
-.menu__nav-enlace {
+.menu__opcion {
   transition: transform var(--transition-base), box-shadow var(--transition-base),
     background-color var(--transition-base);
 }
@@ -264,8 +260,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .menu__opcion,
-  .menu__nav-enlace {
+  .menu__opcion {
     transition: none;
   }
 
