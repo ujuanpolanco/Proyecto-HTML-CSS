@@ -6,6 +6,20 @@ Maquetación de la aplicación web adaptable de **ACME AIR**, una aerolínea int
 
 Resolver los problemas de la interfaz anterior (diseño no adaptativo, navegación confusa, inconsistencia visual y accesibilidad limitada) con una interfaz limpia, intuitiva y responsive, coherente desde el inicio de sesión hasta la gestión de vuelos.
 
+## Integrantes
+
+| Integrante | Vistas |
+|---|---|
+| Michael Martinez | Login, registro, crear contraseña y recuperar contraseña |
+| Juan Manuel Polanco Perdomo | Menú principal y búsqueda de vuelos |
+| Marlon Sanabria | Vuelos disponibles, check-in y mis vuelos |
+
+La base común (hojas de estilo, assets, plantilla y convenciones) se definió entre los tres antes de empezar las vistas.
+
+## Estado del proyecto
+
+Las 9 vistas del enunciado están integradas en `main` y la navegación simulada entre ellas funciona completa.
+
 ## Estructura del proyecto
 
 ```
@@ -22,7 +36,7 @@ Resolver los problemas de la interfaz anterior (diseño no adaptativo, navegaci�
 ├── css/
 │   ├── style.css            # Variables, reset, tipografía, botones, enlaces
 │   ├── forms.css            # Formularios
-│   ├── layout.css           # Estructura de página y tarjetas
+│   ├── layout.css           # Estructura de página, tarjetas y componentes
 │   └── responsive.css       # Tablet (768 px) y escritorio (1024 px)
 ├── img/
 │   ├── logo.svg · logo-blanco.svg · favicon.svg
@@ -30,10 +44,9 @@ Resolver los problemas de la interfaz anterior (diseño no adaptativo, navegaci�
 │   └── backgrounds/
 └── docs/
     ├── plantilla.html       # Esqueleto para crear una vista nueva
-    └── convenciones.md      # Componentes, nombres de clases, accesibilidad y Git
+    ├── convenciones.md      # Componentes, nombres de clases, accesibilidad y Git
+    └── capturas/            # Capturas de pantalla usadas en este README
 ```
-
-Las vistas se agregan por ramas `feature/*`; en el estado actual de `main` están la base común (hojas de estilo, assets y plantilla) y las vistas que ya se hayan integrado.
 
 ## Guía de navegación
 
@@ -54,6 +67,42 @@ Las vistas se agregan por ramas `feature/*`; en el estado actual de `main` está
 | Mis vuelos | Volver | Menú principal |
 | Todas las vistas con "Cerrar Sesión" | Cerrar Sesión | Login |
 
+## Capturas
+
+### Vistas en móvil
+
+<table>
+  <tr>
+    <td align="center"><img src="docs/capturas/login-movil.png" width="220" alt="Login"><br><sub>Login</sub></td>
+    <td align="center"><img src="docs/capturas/registro-movil.png" width="220" alt="Registro"><br><sub>Registro</sub></td>
+    <td align="center"><img src="docs/capturas/crear-contrasena-movil.png" width="220" alt="Crear contraseña"><br><sub>Crear contraseña</sub></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="docs/capturas/recuperar-movil.png" width="220" alt="Recuperar contraseña"><br><sub>Recuperar contraseña</sub></td>
+    <td align="center"><img src="docs/capturas/menu-movil.png" width="220" alt="Menú principal"><br><sub>Menú principal</sub></td>
+    <td align="center"><img src="docs/capturas/buscar-vuelos-movil.png" width="220" alt="Búsqueda de vuelos"><br><sub>Búsqueda de vuelos</sub></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="docs/capturas/vuelos-movil.png" width="220" alt="Vuelos disponibles"><br><sub>Vuelos disponibles</sub></td>
+    <td align="center"><img src="docs/capturas/checkin-movil.png" width="220" alt="Check-in"><br><sub>Check-in</sub></td>
+    <td align="center"><img src="docs/capturas/mis-vuelos-movil.png" width="220" alt="Mis vuelos"><br><sub>Mis vuelos</sub></td>
+  </tr>
+</table>
+
+### Tablet y escritorio
+
+**Menú principal (escritorio, 1280 px):** barra lateral con el perfil y las tarjetas de opciones en una cuadrícula.
+
+![Menú principal en escritorio](docs/capturas/menu-escritorio.png)
+
+**Búsqueda de vuelos (tablet, 768 px):** origen, destino y fechas en dos columnas.
+
+![Búsqueda de vuelos en tablet](docs/capturas/buscar-vuelos-tablet.png)
+
+**Vuelos disponibles (escritorio, 1280 px):** la vista se centra y deja ver el degradado a los lados.
+
+![Vuelos disponibles en escritorio](docs/capturas/vuelos-escritorio.png)
+
 ## Diseño y responsividad
 
 - **Estilo corporativo:** degradado rosa a azul, tipografía Poppins (con Open Sans como respaldo) y botones principales con sombra y `hover` con `transform: scale(1.02)`.
@@ -67,18 +116,6 @@ No requiere instalación ni compilación. Abre `index.html` en el navegador o, d
 ## Flujo de trabajo
 
 - `main` contiene la versión integrada del proyecto.
-- Cada vista se desarrolla en su propia rama (`feature/login`, `feature/menu`, `feature/registro`, `feature/buscar-vuelos`…) creada desde `main`.
+- Cada cambio se desarrolla en su propia rama creada desde `main` (por ejemplo `feature/menu`, `feature/buscar-vuelos` o `fix/registro-boton-guardar`) y se integra con un Pull Request.
 - Los mensajes de commit siguen Conventional Commits en español (`feat:`, `fix:`, `docs:`…).
 - Detalle de componentes, nombres de clases y reglas de equipo en [`docs/convenciones.md`](docs/convenciones.md).
-
-## Reparto del trabajo
-
-| Responsable | Vistas | Estilos |
-|---|---|---|
-| A | Login, registro, crear contraseña, recuperar contraseña | Base global y formularios |
-| B | Menú principal y búsqueda de vuelos | Layout (incluida la vista de escritorio del menú) |
-| C | Vuelos disponibles, check-in y mis vuelos | Tarjeta de vuelo y revisión responsive final |
-
-## Capturas
-
-_Pendiente: se agregarán al integrar las vistas._
