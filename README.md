@@ -27,7 +27,7 @@ Las 9 vistas del enunciado están integradas en `main` y la navegación simulada
 ├── index.html               # Login
 ├── menu.html                # Menú principal
 ├── registro.html            # Registro
-├── crear-contraseña.html    # Crear contraseña
+├── crear-contrasena.html    # Crear contraseña
 ├── recuperar.html           # Recuperar contraseña
 ├── buscar-vuelos.html       # Búsqueda de vuelos
 ├── vuelos.html              # Vuelos disponibles
