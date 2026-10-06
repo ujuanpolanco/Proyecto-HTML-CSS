@@ -50,19 +50,181 @@
 
 /* --------------------------------------------------------------------------
    Menú principal · tablet y escritorio (768 px en adelante)
-   Se mantiene el mismo diseño del celular (hoja blanca centrada sobre el
-   degradado y opciones en lista) para que la vista sea igual en todos los
-   dispositivos. Solo se agrega la descripción debajo de cada opción.
+   El perfil pasa a ser una barra lateral a la izquierda y las tarjetas
+   ocupan el resto de la pantalla en una cuadrícula centrada en ancho y
+   alto: dos columnas y la tercera tarjeta a todo el ancho.
+   .menu usa display: contents para que sus hijos entren en la cuadrícula.
    -------------------------------------------------------------------------- */
 @media (min-width: 768px) {
+  .app--menu {
+    display: grid;
+    grid-template-columns: 14rem 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+      "cabecera principal"
+      "perfil   principal";
+    padding: 0;
+  }
+
+  .app--menu .menu {
+    display: contents;
+  }
+
+  .app--menu .app-header {
+    grid-area: cabecera;
+    padding: var(--space-3);
+  }
+
+  .app--menu .app-header__logo {
+    width: 100%;
+    max-width: 12rem;
+    height: auto;
+  }
+
+  /* Barra lateral: perfil, accesos rápidos y cierre de sesión al final */
+  .menu__perfil {
+    grid-area: perfil;
+    padding: var(--space-4) var(--space-3);
+    border-bottom: 0;
+    border-right: 1px solid var(--color-divider);
+  }
+
+  .menu__avatar {
+    width: 4.5rem;
+    height: 4.5rem;
+  }
+
+  .menu__saludo {
+    font-size: var(--font-size-base);
+  }
+
+  .menu__pregunta {
+    margin-bottom: var(--space-4);
+    font-size: var(--font-size-sm);
+  }
+
+  .menu__nav {
+    display: block;
+    align-self: stretch;
+  }
+
+  .menu__nav-lista {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+  }
+
+  .menu__nav-enlace {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-3);
+    font-size: var(--font-size-sm);
+    color: var(--color-text);
+    text-align: left;
+    text-decoration: none;
+    border-radius: var(--radius-md);
+  }
+
+  .menu__nav-enlace:hover {
+    background-color: var(--menu-fondo);
+  }
+
+  .menu__nav-icono {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .menu__salir {
+    margin-top: auto;
+    padding-top: var(--space-4);
+  }
+
+  /* Tarjetas centradas en el espacio que queda a la derecha */
+  .menu__principal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    grid-area: principal;
+    padding: var(--space-5) var(--space-4);
+  }
+
+  .menu__opciones {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-4);
+    width: 100%;
+    max-width: 64rem;
+    margin: 0 auto;
+  }
+
+  .menu__opciones li:last-child {
+    grid-column: 1 / -1;
+  }
+
   .menu__opcion {
-    padding: var(--space-3) var(--space-4);
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
+    padding: var(--space-4) var(--space-3);
+    text-align: center;
+  }
+
+  .menu__texto {
+    flex: 0 1 auto;
+  }
+
+  .menu__chevron {
+    display: none;
+  }
+}
+
+/* Escritorio: barra lateral más ancha y más aire alrededor de las tarjetas */
+@media (min-width: 1024px) {
+  .app--menu {
+    grid-template-columns: 16rem 1fr;
+    padding: 0;
+  }
+
+  .menu__principal {
+    padding: var(--space-5);
+  }
+
+  .menu__opcion {
+    padding: var(--space-5) var(--space-4);
+  }
+
+  .menu__icono {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .menu__titulo {
+    font-size: var(--font-size-lg);
   }
 
   .menu__descripcion {
-    display: block;
-    margin-top: var(--space-1);
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-base);
+  }
+}
+
+/* Pantallas grandes: las tres tarjetas en una fila para llenar el ancho */
+@media (min-width: 1440px) {
+  .app--menu {
+    grid-template-columns: 18rem 1fr;
+  }
+
+  .menu__principal {
+    padding: var(--space-5) calc(var(--space-5) * 2);
+  }
+
+  .menu__opciones {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 80rem;
+  }
+
+  .menu__opciones li:last-child {
+    grid-column: auto;
   }
 }
 
