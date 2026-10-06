@@ -196,6 +196,7 @@
     grid-template-columns: repeat(2, 1fr);
     gap: var(--space-4);
     max-width: 60rem;
+    margin: 0 auto;
   }
 
   .menu__opciones li:last-child {
@@ -235,6 +236,34 @@
 
   .menu__chevron {
     display: none;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Menú principal · pantallas grandes (1440 px)
+   Para no dejar espacio vacío a la derecha, la barra lateral crece un poco
+   y las tres tarjetas van en una sola fila, centradas.
+   -------------------------------------------------------------------------- */
+@media (min-width: 1440px) {
+  .app--menu {
+    grid-template-columns: 17rem 1fr;
+  }
+
+  .app--menu .menu__principal {
+    padding: var(--space-5) calc(var(--space-5) * 2);
+  }
+
+  .menu__opciones {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 80rem;
+  }
+
+  .menu__opciones li:last-child {
+    grid-column: auto;
+  }
+
+  .menu__opcion {
+    padding: var(--space-5) var(--space-4);
   }
 }
 
