@@ -11,7 +11,7 @@ Todas las vistas enlazan las mismas 4 hojas, en este orden (ver `docs/plantilla.
 | `css/style.css` | Variables `:root`, reset, tipografía, botones, enlaces y utilidades |
 | `css/forms.css` | Campos de texto, select y checkbox |
 | `css/layout.css` | Estructura de página, encabezado, barra de usuario y tarjetas |
-| `css/responsive.css` | Cambios para tablet (768 px), escritorio (1024 px) y pantallas grandes (1440 px). Siempre al final |
+| `css/responsive.css` | Cambios para tablet (768 px) y escritorio (1024 px). Siempre al final |
 
 - Se enlazan con `<link>`, no con `@import` (cada `@import` es una petición extra).
 - Enfoque **mobile first**: se escribe primero la vista móvil y se agregan `@media (min-width: ...)` para pantallas más grandes.
@@ -121,7 +121,7 @@ Para no pisarnos en git, cada archivo CSS termina con una sección por responsab
 | 320 px | Móvil pequeño | Estilos base, sin media query |
 | 768 px | Tablet | `@media (min-width: 768px)` |
 | 1024 px | Escritorio | `@media (min-width: 1024px)`: vista centrada con padding lateral |
-| 1440 px | Pantallas grandes | `@media (min-width: 1440px)`: solo el menú, con las tres tarjetas en una fila |
+| 1280 px en adelante | Pantallas grandes | Solo el menú: crece en proporción al ancho de la ventana con un tamaño base fluido (`clamp()`), sin media query adicional |
 
 Los formularios usan `max-width` y tipografía proporcional. Las medias queries van al final del CSS porque sobrescriben lo anterior.
 

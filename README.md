@@ -96,6 +96,10 @@ Las 9 vistas del enunciado están integradas en `main` y la navegación simulada
 
 ![Menú principal en escritorio](docs/capturas/menu-escritorio.png)
 
+**Menú principal (pantalla grande, 1920 px):** el mismo diseño ampliado en proporción, sin dejar espacios sin usar.
+
+![Menú principal en pantalla grande](docs/capturas/menu-escritorio-grande.png)
+
 **Búsqueda de vuelos (tablet, 768 px):** origen, destino y fechas en dos columnas.
 
 ![Búsqueda de vuelos en tablet](docs/capturas/buscar-vuelos-tablet.png)
@@ -107,7 +111,7 @@ Las 9 vistas del enunciado están integradas en `main` y la navegación simulada
 ## Diseño y responsividad
 
 - **Estilo corporativo:** degradado rosa a azul, tipografía Poppins (con Open Sans como respaldo) y botones principales con sombra y `hover` con `transform: scale(1.02)`.
-- **Mobile first** con tres puntos de control: 320 px (móvil pequeño), 768 px (tablet) y 1024 px (escritorio, vista centrada con padding lateral). El menú agrega uno más a 1440 px para pantallas grandes.
+- **Mobile first** con tres puntos de control: 320 px (móvil pequeño), 768 px (tablet) y 1024 px (escritorio, vista centrada con padding lateral). En pantallas grandes (desde 1280 px) el menú crece en proporción al ancho de la ventana, así que se ve igual en cualquier monitor.
 - **Menú desplegable:** en las vistas con sesión iniciada, el botón ☰ del encabezado abre la navegación entre secciones. Usa `<details>` y `<summary>`, así que funciona sin JavaScript, con mouse o con teclado.
 - **Accesibilidad:** HTML semántico, `label` en todos los campos, textos alternativos en imágenes y foco visible con teclado.
 
