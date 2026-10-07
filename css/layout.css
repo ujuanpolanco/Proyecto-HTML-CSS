@@ -231,6 +231,31 @@
 
 /* ===== A: acceso (login, registro, crear-contraseña, recuperar) ===== */
 
+/* --------------------------------------------------------------------------
+   Login (index.html)
+   Sin encabezado degradado: en móvil la pantalla es blanca y el logo a color
+   va arriba del título, centrado. Los enlaces de abajo también van centrados.
+   -------------------------------------------------------------------------- */
+.app--login {
+  background: var(--color-surface);
+}
+
+.app--login .app__card {
+  padding-top: var(--space-5);
+  border-radius: 0;
+}
+
+.login__logo {
+  display: block;
+  width: 9rem;
+  height: auto;
+  margin: 0 auto var(--space-3);
+}
+
+.form--login .link {
+  text-align: center;
+}
+
 /* ===== B: menú y búsqueda (menu, buscar-vuelos) ===== */
 
 /* --------------------------------------------------------------------------
