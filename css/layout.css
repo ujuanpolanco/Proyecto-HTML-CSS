@@ -110,9 +110,7 @@
    desde tablet el perfil pasa a ser una barra lateral (ver responsive.css).
    -------------------------------------------------------------------------- */
 .app--menu {
-  --menu-fondo: #f4f5f9;
-
-  background: var(--menu-fondo);
+  background: var(--color-surface-soft);
 }
 
 .app--menu .app-header {
@@ -190,7 +188,7 @@
   width: 3.5rem;
   height: 3.5rem;
   padding: 0.75rem;
-  background-color: var(--menu-fondo);
+  background-color: var(--color-surface-soft);
   border-radius: 50%;
 }
 
@@ -226,7 +224,7 @@
 
 .menu__opcion:hover {
   transform: scale(1.02);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: var(--shadow-lg);
 }
 
 .menu__opcion:active {
