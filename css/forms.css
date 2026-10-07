@@ -57,7 +57,7 @@
 
 .form__input:user-invalid,
 .form__select:user-invalid {
-  border-color: #d32f2f;
+  border-color: var(--color-error);
 }
 
 /* Select con flecha propia para que se vea igual en todos los navegadores */
