@@ -7,6 +7,7 @@
    - 320 px  · móvil pequeño (estilos base, sin media query)
    - 768 px  · tablet
    - 1024 px · escritorio (vista centrada con padding lateral)
+   - 1440 px · pantallas grandes (solo el menú: tres tarjetas en una fila)
 
    Este archivo se enlaza al final de cada HTML porque las media queries
    son excepciones que deben sobrescribir lo anterior.
@@ -127,7 +128,7 @@
   }
 
   .menu__nav-enlace:hover {
-    background-color: var(--menu-fondo);
+    background-color: var(--color-surface-soft);
   }
 
   .menu__nav-icono {

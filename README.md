@@ -106,7 +106,7 @@ Las 9 vistas del enunciado están integradas en `main` y la navegación simulada
 ## Diseño y responsividad
 
 - **Estilo corporativo:** degradado rosa a azul, tipografía Poppins (con Open Sans como respaldo) y botones principales con sombra y `hover` con `transform: scale(1.02)`.
-- **Mobile first** con tres puntos de control: 320 px (móvil pequeño), 768 px (tablet) y 1024 px (escritorio, vista centrada con padding lateral).
+- **Mobile first** con tres puntos de control: 320 px (móvil pequeño), 768 px (tablet) y 1024 px (escritorio, vista centrada con padding lateral). El menú agrega uno más a 1440 px para pantallas grandes.
 - **Accesibilidad:** HTML semántico, `label` en todos los campos, textos alternativos en imágenes y foco visible con teclado.
 
 ## Cómo ejecutarlo
