@@ -55,6 +55,29 @@ Para no pisarnos en git, cada archivo CSS termina con una sección por responsab
 </body>
 ```
 
+**Menú desplegable** (menu, buscar-vuelos, vuelos, checkin, mis-vuelos). Va dentro del encabezado, que lleva el modificador `app-header--nav`. Se abre sin JavaScript gracias a `<details>`; marca la página actual con `aria-current="page"`. En el menú, desde tablet, se oculta porque la barra lateral ya tiene los accesos.
+```html
+<header class="app-header app-header--nav">
+  <img class="app-header__logo" src="img/logo-blanco.svg" alt="ACME AIR · Flying to your dreams">
+  <details class="site-nav">
+    <summary class="site-nav__toggle">
+      <img class="site-nav__icono site-nav__icono--abrir" src="img/icons/menu-abrir.svg" alt="">
+      <img class="site-nav__icono site-nav__icono--cerrar" src="img/icons/menu-cerrar.svg" alt="">
+      <span class="visually-hidden">Menú de navegación</span>
+    </summary>
+    <nav aria-label="Navegación principal">
+      <ul class="site-nav__list">
+        <li><a class="site-nav__link" href="menu.html" aria-current="page">Menú principal</a></li>
+        <li><a class="site-nav__link" href="buscar-vuelos.html">Buscar vuelos</a></li>
+        <li><a class="site-nav__link" href="checkin.html">Check In</a></li>
+        <li><a class="site-nav__link" href="mis-vuelos.html">Mis Vuelos</a></li>
+        <li><a class="site-nav__link site-nav__link--salir" href="index.html">Cerrar Sesión</a></li>
+      </ul>
+    </nav>
+  </details>
+</header>
+```
+
 **Barra de usuario** (buscar-vuelos, vuelos, checkin, mis-vuelos)
 ```html
 <div class="user-bar">

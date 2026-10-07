@@ -66,6 +66,7 @@ Las 9 vistas del enunciado están integradas en `main` y la navegación simulada
 | Check-in | Guardar | Menú principal |
 | Mis vuelos | Volver | Menú principal |
 | Todas las vistas con "Cerrar Sesión" | Cerrar Sesión | Login |
+| Menú desplegable (☰ en el encabezado) | Menú principal · Buscar vuelos · Check In · Mis Vuelos · Cerrar Sesión | La vista elegida |
 
 ## Capturas
 
@@ -107,6 +108,7 @@ Las 9 vistas del enunciado están integradas en `main` y la navegación simulada
 
 - **Estilo corporativo:** degradado rosa a azul, tipografía Poppins (con Open Sans como respaldo) y botones principales con sombra y `hover` con `transform: scale(1.02)`.
 - **Mobile first** con tres puntos de control: 320 px (móvil pequeño), 768 px (tablet) y 1024 px (escritorio, vista centrada con padding lateral). El menú agrega uno más a 1440 px para pantallas grandes.
+- **Menú desplegable:** en las vistas con sesión iniciada, el botón ☰ del encabezado abre la navegación entre secciones. Usa `<details>` y `<summary>`, así que funciona sin JavaScript, con mouse o con teclado.
 - **Accesibilidad:** HTML semántico, `label` en todos los campos, textos alternativos en imágenes y foco visible con teclado.
 
 ## Cómo ejecutarlo

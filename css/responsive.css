@@ -72,8 +72,14 @@
   }
 
   .app--menu .app-header {
+    display: flex;
     grid-area: cabecera;
     padding: var(--space-3);
+  }
+
+  /* La barra lateral ya tiene los accesos rápidos */
+  .app--menu .site-nav {
+    display: none;
   }
 
   .app--menu .app-header__logo {
