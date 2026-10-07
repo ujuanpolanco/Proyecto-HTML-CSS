@@ -7,7 +7,6 @@
    - 320 px  · móvil pequeño (estilos base, sin media query)
    - 768 px  · tablet
    - 1024 px · escritorio (vista centrada con padding lateral)
-   - 1440 px · pantallas grandes (solo el menú: tres tarjetas en una fila)
 
    Este archivo se enlaza al final de cada HTML porque las media queries
    son excepciones que deben sobrescribir lo anterior.
@@ -220,26 +219,6 @@
 
   .menu__descripcion {
     font-size: var(--font-size-base);
-  }
-}
-
-/* Pantallas grandes: las tres tarjetas en una fila para llenar el ancho */
-@media (min-width: 1440px) {
-  .app--menu {
-    grid-template-columns: 18rem 1fr;
-  }
-
-  .menu__principal {
-    padding: var(--space-5) calc(var(--space-5) * 2);
-  }
-
-  .menu__opciones {
-    grid-template-columns: repeat(3, 1fr);
-    max-width: 80rem;
-  }
-
-  .menu__opciones li:last-child {
-    grid-column: auto;
   }
 }
 
