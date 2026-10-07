@@ -95,6 +95,13 @@
 
 /* ===== A: acceso (login, registro, crear-contraseña, recuperar) ===== */
 
+/* Texto de ayuda bajo un campo (recuperar.html) */
+.form__ayuda {
+  font-size: var(--font-size-sm);
+  line-height: 1.6;
+  color: var(--color-text-muted);
+}
+
 /* ===== B: menú y búsqueda (menu, buscar-vuelos) ===== */
 
 /* --------------------------------------------------------------------------
