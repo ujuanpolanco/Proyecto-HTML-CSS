@@ -46,6 +46,21 @@
 
 /* ===== A: acceso (login, registro, crear-contraseña, recuperar) ===== */
 
+/* Login · tablet y escritorio: sin encabezado, la hoja blanca queda centrada
+   sobre el degradado, con las cuatro esquinas redondeadas */
+@media (min-width: 768px) {
+  .app--login {
+    justify-content: center;
+    background: var(--gradient-brand);
+  }
+
+  .app--login .app__card {
+    flex: 0 1 auto;
+    max-width: 32rem;
+    border-radius: var(--radius-lg);
+  }
+}
+
 /* ===== B: menú y búsqueda (menu, buscar-vuelos) ===== */
 
 /* --------------------------------------------------------------------------
